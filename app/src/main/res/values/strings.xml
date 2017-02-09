@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ILoveZappos</string>
+    <string name="edit_message">What to search for?</string>
+    <string name="button_send">Search</string>
+</resources>
