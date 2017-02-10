@@ -64,6 +64,7 @@ public class ZapposModel {
                     viewModel.setPrice(model.getResults().get(0).getPrice());
                     viewModel.setDiscount("Discount :"+ model.getResults().get(0).getPercentOff());
                     viewModel.setImageURL(model.getResults().get(0).getThumbnailImageUrl());
+                    viewModel.setBrand(model.getResults().get(0).getBrandName());
                 }
                 //viewModel.setPb(false);
             }

@@ -20,12 +20,14 @@ import android.widget.ImageView;
 public class MainViewModel extends BaseObservable{
 
     private String text;
+    private String brand;
     private String price;
     private String discount;
     private String imageURL;
     private String productURL;
     private String fabColor;
     private boolean pb;
+    private boolean addedtocart;
     ImageView img;
 
     @Bindable
@@ -35,6 +37,11 @@ public class MainViewModel extends BaseObservable{
     @Bindable
     public String getText() {
         return text;
+    }
+
+    @Bindable
+    public String getBrand() {
+        return brand;
     }
 
     @Bindable
@@ -67,6 +74,11 @@ public class MainViewModel extends BaseObservable{
         return pb;
     }
 
+    @Bindable
+    public boolean isAddedtocart() {
+        return addedtocart;
+    }
+
     public void setImageView(ImageView img) {
          this.img = img;
     }
@@ -75,10 +87,20 @@ public class MainViewModel extends BaseObservable{
         notifyPropertyChanged(BR.pb);
     }
 
+    public void setAddedtocart(boolean addedtocart) {
+        this.addedtocart = addedtocart;
+        notifyPropertyChanged(BR.addedtocart);
+    }
+
     public void setText(String text) {
         this.text = text;
         notifyPropertyChanged(BR.text);
        }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+        notifyPropertyChanged(BR.brand);
+   }
     public void setFabColor(String fabColor) {
         this.fabColor = fabColor;
         notifyPropertyChanged(BR.fabColor);

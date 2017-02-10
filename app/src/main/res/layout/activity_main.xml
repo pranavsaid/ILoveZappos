@@ -41,12 +41,6 @@
                 android:hint="@string/edit_message"
                 android:imeOptions="actionSearch"
                 android:maxLines="1"/>
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/button_send"
-                android:background="@android:color/holo_red_light" />
         </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,7 +76,7 @@
 
 
             <TextView
-                android:id="@+id/product_detail_title"
+                android:id="@+id/product_detail_brand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
@@ -90,6 +84,14 @@
                 android:textSize="18sp"
                 tools:text="@{model.text}" />
 
+            <TextView
+                android:id="@+id/product_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textSize="12sp"
+                tools:text="@{model.discount}" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +107,6 @@
                     tools:text="@{model.price}" />
 
                 <Button
-                    android:id="@+id/AddToCart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
@@ -113,7 +114,7 @@
                     android:layout_marginTop="1dp"
                     android:text="Add To Cart"
                     android:layout_marginBottom="2dp"
-                    style="@style/Widget.AppCompat.Button.Colored"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:textColorLink="@android:color/holo_red_dark"
                     android:background="@android:color/holo_red_light" />
 
@@ -141,23 +142,25 @@
     </LinearLayout>
     </ScrollView>
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/AddToCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
-            android:src="@drawable/ic_addtocart"
+            android:src="@{model.isAddedtocart ? @drawable/ic_cart : @drawable/ic_addtocart}"
             app:layout_anchor="@id/mainLayout"
             app:fabSize="normal"
             app:borderWidth="0dp"
             app:elevation="6dp"
             app:pressedTranslationZ="12dp"
-            app:backgroundTint="?attr/colorButtonNormal"
+            app:backgroundTint="@{model.isAddedtocart ? @android:color/holo_red_light : @android:color/darker_gray}"
             android:baselineAlignBottom="false"
             android:padding="8dp"
             android:layout_centerVertical="false"
             android:layout_margin="16dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="false"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:visibility="@{model.pb ? View.VISIBLE : View.GONE}"/>
     </RelativeLayout>
 
 </layout>

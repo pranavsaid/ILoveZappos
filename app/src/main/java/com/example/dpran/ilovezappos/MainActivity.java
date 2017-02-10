@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private MainViewModel viewModel;
     private ZapposModel model;
+    private boolean isaddedtocart;
     ImageView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +33,21 @@ public class MainActivity extends AppCompatActivity {
         binding.setModel(viewModel = new MainViewModel());
         model = new ZapposModel(viewModel);
         view = (ImageView) this.findViewById(R.id.product_details_carousel);
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        viewModel.setAddedtocart(false);
+        isaddedtocart = false;
+        binding.AddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //ImageView img = (ImageView) v.findViewById(R.id.product_details_carousel);
-                viewModel.setImageView(view);
-                viewModel.setPb(true);
-                model.getUser(binding.username.getText().toString());
+                if(isaddedtocart == false)
+                {
+                    viewModel.setAddedtocart(true);
+                    isaddedtocart = true;
+                }
+                else
+                {
+                    viewModel.setAddedtocart(false);
+                    isaddedtocart = false;
+                }
             }
         });
         ((EditText)findViewById(R.id.username)).setOnEditorActionListener(
