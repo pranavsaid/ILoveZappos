@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.mainLayout).requestFocus();
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setModel(viewModel = new MainViewModel());
         model = new ZapposModel(viewModel);
@@ -104,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        findViewById(R.id.mainLayout).requestFocus();
 
     }
 

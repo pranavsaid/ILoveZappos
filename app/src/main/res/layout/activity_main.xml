@@ -23,7 +23,9 @@
     <ScrollView
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusableInTouchMode="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -54,11 +56,12 @@
 
             <ImageView
                 android:id="@+id/defaultImage"
-                android:layout_width="match_parent"
-                android:layout_height="275dp"
+                android:layout_width="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/homeimage2"
-                android:visibility="@{model.pb ? View.GONE : View.VISIBLE}"/>
+                android:src="@drawable/homeimage3"
+                android:scaleType="fitXY"
+                android:visibility="@{model.pb ? View.GONE : View.VISIBLE}"
+                android:layout_height="510dp" />
             <ImageView
                 android:id="@+id/product_details_carousel"
                 android:layout_width="match_parent"

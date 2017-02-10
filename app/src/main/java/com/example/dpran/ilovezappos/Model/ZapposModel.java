@@ -64,7 +64,7 @@ public class ZapposModel {
                     viewModel.setText("" + model.getResults().get(0).getProductName());
                     viewModel.setPrice(model.getResults().get(0).getPrice());
                     viewModel.setDiscount("Discount :"+ model.getResults().get(0).getPercentOff());
-                    viewModel.setImageURL(model.getResults().get(0).getThumbnailImageUrl());
+                    viewModel.setImageURL((model.getResults().get(0).getThumbnailImageUrl()).replace("-t-THUMBNAIL","-p-MULTIVIEW"));
                     viewModel.setBrand(model.getResults().get(0).getBrandName());
                     viewModel.setProductURL("View this product on Zappos \n"+model.getResults().get(0).getProductUrl()+"");
                 }
