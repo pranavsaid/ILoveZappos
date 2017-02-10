@@ -5,6 +5,7 @@ package com.example.dpran.ilovezappos.Model;
  */
 
 import android.app.Activity;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -65,6 +66,7 @@ public class ZapposModel {
                     viewModel.setDiscount("Discount :"+ model.getResults().get(0).getPercentOff());
                     viewModel.setImageURL(model.getResults().get(0).getThumbnailImageUrl());
                     viewModel.setBrand(model.getResults().get(0).getBrandName());
+                    viewModel.setProductURL("View this product on Zappos \n"+model.getResults().get(0).getProductUrl()+"");
                 }
                 //viewModel.setPb(false);
             }
