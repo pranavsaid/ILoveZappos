@@ -57,11 +57,10 @@
             <ImageView
                 android:id="@+id/defaultImage"
                 android:layout_width="wrap_content"
+                android:layout_height="500dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/homeimage3"
-                android:scaleType="fitXY"
-                android:visibility="@{model.pb ? View.GONE : View.VISIBLE}"
-                android:layout_height="510dp" />
+                android:visibility="@{model.pb ? View.GONE : View.VISIBLE}" />
             <ImageView
                 android:id="@+id/product_details_carousel"
                 android:layout_width="match_parent"

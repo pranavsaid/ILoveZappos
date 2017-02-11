@@ -48,16 +48,9 @@ public class ZapposModel {
 
                 if (model.getResults() == null) {
                     //404 or the response cannot be converted to User.
-                    ResponseBody responseBody = response.errorBody();
-                    if (responseBody != null) {
-                        try {
-                            viewModel.setText("responseBody = " + responseBody.string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        viewModel.setText("responseBody  = null");
-                    }
+
+                        viewModel.setText("Your Search doesn't match with any product at Zappos");
+                    viewModel.setPb(false);
                 } else {
 
                     //200
